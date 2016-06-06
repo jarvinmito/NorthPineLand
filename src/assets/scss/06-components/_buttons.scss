@@ -1,0 +1,36 @@
+.nli-btns{
+		
+	&--primary{
+		&.button{
+			&, &:link, &:visited{
+				background-color: $nli-blue;
+			}
+
+			&:hover, &:active, &.active{
+				background-color: $nli-blue-dark;
+			}
+		}
+	}
+
+	&--secondary{
+		&.button{
+			&, &:link, &:visited{
+				background-color: $nli-gray;
+			}
+
+			&:hover, &:active, &.active{
+				background-color: $nli-gray-dark;
+			}
+		}
+	}
+}
+
+
+.nli-link{
+	&__text{
+		&, & a{
+			font-size: 14px;
+			color: $nli-brown-text;
+		}
+	}
+}

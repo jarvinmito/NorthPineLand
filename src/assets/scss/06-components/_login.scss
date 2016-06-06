@@ -1,0 +1,45 @@
+.nli-login{
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	margin-top: -210px;
+
+	img{
+		display: block;
+		margin: 30px auto;
+		height: auto;
+		width: 374px;
+	}
+
+
+	label{
+		position: relative;
+		margin: 20px 0;
+
+		i{
+			position: absolute;
+			top: 14px;
+			left: 14px;
+			display: inline-block;
+			font-size: 18px;
+			margin-right: 10px;
+			color: $nli-brown-dark;
+		}
+
+		input{
+			display: inline-block;
+			border: none;
+			border-bottom: 1px solid $nli-brown-text;
+			box-shadow: none;
+			padding: 24px;
+			padding-left: 48px;
+
+			&:focus{
+				border: none;
+				border-bottom: 1px solid $nli-brown-text;
+				box-shadow: none;
+			}
+		}
+	}
+
+}

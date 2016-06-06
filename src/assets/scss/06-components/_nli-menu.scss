@@ -1,0 +1,56 @@
+.nli-menu{
+	
+	&__wrapper{
+		position: relative;
+		min-height: 100%;
+		width: 100%;
+
+		h1{
+			font-size: 36px;
+			padding: 20px 30px;
+			color: $nli-brown-light;
+		}
+
+		hr{
+			border-bottom-color: $gray;
+		}
+	}
+
+	&__main-page{
+		li a{
+			color: $nli-brown-breakpoint;
+			font-size: 20px;
+			padding: 20px 30px;
+
+			&:hover, &:active, &.active{
+				color: $nli-brown-light;
+				background-color: $nli-brown-text-dark;
+			}
+		}
+	}
+
+	&__settings{
+		li a{
+			color: $gray-light;
+			font-size: 16px;
+			padding: 20px 30px;
+
+			&:hover, &:active, &.active{
+				color: $gray-bright;
+			}
+		}
+	}
+
+	&__footer{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		// height: 36px;
+		padding: 20px;
+
+		font-size: 14px;
+		color: $gray;
+	}
+
+}

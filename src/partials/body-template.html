@@ -1,0 +1,18 @@
+<div class="off-canvas-wrapper-inner nli-wrapper__sub" data-off-canvas-wrapper>
+  <div class="off-canvas nli-wrapper__menu--mobile position-right" id="offCanvas" data-position="right" data-off-canvas>
+    {{> header-menu-mobile}}
+  </div>
+
+  <div class="off-canvas-content" data-off-canvas-content>
+      <!-- <button type="button" class="button" data-toggle="offCanvas">Open Menu</button> -->
+      <!-- Page content -->
+      {{> header}}
+
+      {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+      <section class="main-container">
+        {{> body}}
+      </section>
+    
+      {{> footer}}
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.nli-hamburger-menu{
+	&__button{
+
+	  @include btn(72px, 72px);
+	  
+	  .icon {
+	  	transition: all 0.5s;
+	    @include icon(4px, 36px, $nli-brown-text);
+	    
+	    &:before{
+	      @include icon-before(4px, 36px, -12px, $nli-brown-text);
+	    }
+	    
+	    &:after{
+	      @include icon-after(4px, 36px, 12px, $nli-brown-text);
+	    }
+	  }
+	  
+	  &.open {
+	    .icon {
+	      transition-duration: 0.5s;
+	      background: transparent;
+	      
+	      &:before{
+	        transform: rotateZ(45deg) scaleX(1.25) translate(6px, 7px);
+	      }
+
+	      &:after{
+	        transform: rotateZ(-45deg) scaleX(1.25) translate(8px, -10px);
+	      }
+	    }
+	  }
+	  &:hover {
+	    cursor: pointer;
+	  }
+
+  }
+}
