@@ -1,0 +1,97 @@
+.yondu-filter{
+	position: relative;
+	padding: 16px 0 0;
+
+	background-color: $gray-light2;
+	
+
+	// For medium screen and above
+	@include breakpoint(medium up) {
+
+		padding: 16px 16px 0;
+
+		&--left{
+			
+			@include grid-column(9, 1px);
+
+			& > .columns{
+				
+				&.medium-1{
+					@include grid-column(1, 10px);
+				}
+
+				&.medium-3{
+					@include grid-column(3, 10px);
+				}
+				
+				@include grid-column(4, 10px);
+			}
+		}
+
+		&--right{
+			@include grid-column(3, 1px);
+
+			& > .columns{
+				@include grid-column(6, 10px);
+			}
+		}
+	}
+	
+	
+	.form-group{
+		display:block;
+	}
+	
+	&__label{
+		color: $nli-gray;
+		// color: $red;
+		font-weight: bold;
+		height: 40px;
+		margin-bottom: 0;
+		margin-right: 10px;
+		display: inline-block;
+	}
+
+	&__type{
+		// display: none !important;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	&__btn{
+		vertical-align: top;
+
+		&--legend{
+			display: none;
+		}
+	}
+
+	&__date{
+		width: 140px;
+		float: left;
+		margin-right: 4px;
+		&, & .input-group-addon{
+			box-shadow: none;
+			color: $black;
+			border-color: $nli-gray-dark;
+		}
+
+		& .input-group-addon{
+			cursor: pointer;
+		}
+	}
+
+	&__last, &--hasmargin{
+		margin-right: 15px;
+	}
+	
+	// button,
+	// input,
+	// select,
+	// .button,
+	// &__type,
+	// &__date,
+	label{
+		margin-bottom: 0;
+	}
+}

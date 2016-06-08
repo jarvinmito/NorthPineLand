@@ -1,0 +1,54 @@
+.yondu-callout{
+	margin-bottom: 10px;
+	border: none;
+	
+	
+	&__project{
+		&, &.small{
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+
+		&__logo{
+			& > img{
+				max-height: 50px;
+				width: auto;
+
+				border: none;
+			}
+		}
+
+		&__rfo, &__lot{
+			padding-left: 0;
+			padding-right: 0;
+
+			text-align: center;
+
+			& > span, & > small{
+				display: block;
+				margin: 0;
+				padding: 0;
+
+				text-transform: uppercase;
+			}
+
+			& > span{
+				font-size: 16px;
+			}
+
+			& > small{
+				font-size: 10px;
+			}
+
+		}
+
+		&__action{
+			& .button{
+				margin: 0;
+			}
+		}
+
+	}
+
+}

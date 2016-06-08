@@ -6,7 +6,7 @@
 
 @include foundation-global-styles;
 @include foundation-grid;
-// @include foundation-flex-grid;
+@include foundation-flex-grid;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -44,7 +44,7 @@
 @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-// @include foundation-flex-classes;
+@include foundation-flex-classes;
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
@@ -64,7 +64,7 @@
 
 // GENERIC
 @import "03-generic/font-awesome";
-// @import "03-generic/normalize";
+// @import "03-generic/datatables-foundation";
 
 // BASE
 @import "04-base/global";
@@ -82,6 +82,11 @@
 @import "06-components/burger";
 @import "06-components/nli-menu";
 @import "06-components/login";
+@import "06-components/yondu-dashboard";
+@import "06-components/yondu-callout";
+@import "06-components/yondu-container";
+@import "06-components/yondu-filter";
+@import "06-components/yondu-table";
 
 // THEMES
 // @import "07-themes/default";

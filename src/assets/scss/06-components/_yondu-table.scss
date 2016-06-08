@@ -1,0 +1,180 @@
+.yondu-table{
+
+	&__action{
+		&__button{
+			display: none;
+		}
+
+		&__buttons{
+			list-style: none;
+			margin: 0;
+
+			& > li{
+				display: inline-block;
+
+				& > a{
+					display: block;
+					height: 24px;
+					width: 24px;
+					border-radius: 50%;
+
+					font-size: 12px;
+					line-height: 24px;
+					background-color: $gray;
+					text-align: center;
+					color: $gray-bright;
+
+					transition: all .25s;
+
+					&:hover, &:active{
+						background-color: $gray-dark;
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+
+
+	thead{
+		background-color: transparent;
+		border: none;
+		border-bottom: 1px solid $gray-light;
+
+		& > tr > th {
+			font-size: 12px;
+			font-weight: bold;
+			color: $nli-gray-text;
+		}
+	}
+
+	tbody{
+		background: none;
+		border: none;
+
+		& > tr {
+			border: none;
+			border-top: 1px solid $gray-light;
+
+			&:nth-child(even){
+				background: none;
+			}
+
+			& > td {
+				padding: 15px 10px;
+				font-size: 14px;
+				font-weight: normal;
+				color: $nli-gray-text-light;
+			}
+		}
+	}
+}
+
+
+@media screen and #{breakpoint(small only)} {
+  // Small only
+  .yondu-table{
+
+		&__action{
+
+			&__button{
+				display: block;
+				width: 32px;
+				height: 32px;
+				margin: auto 0 auto auto;
+				font-size: 24px;
+			}
+
+			&__buttons{
+				display: none;
+				min-width: 120px;
+
+				list-style: none;
+				background: $white;
+				box-shadow: 0 0 20px -10px $gray;
+
+				&.expanded{
+					display: block;
+				}
+
+				& > li{
+
+					display: block;
+					text-align: left;
+
+					& > a{
+						display: inline-block;
+
+						width: 100%;
+						height: auto;
+						border-radius: 0;
+
+						background-color: transparent;
+
+						padding: 10px;
+						text-align: left;
+
+						font-size: 14px;
+						color: $nli-gray-text;
+
+						.fa{
+							display: none;
+						}
+
+						&:after{
+							content: attr(title);
+							display: inline-block;
+							text-transform: capitalize;
+						}
+					}
+				}
+ 			}
+
+		}
+
+  	thead{
+  		display: none;
+  	}
+
+		tr{
+			position: relative;
+			display: block;
+		}
+
+  	td{
+  		display: block;
+
+  		&.yondu-table__action{
+  			position:absolute;
+  			display: block;
+
+  			top: 6px;
+  			right: 10px;
+  			z-index: 1;
+  			text-align: right;
+  		}
+
+  		&:first-child {
+	      padding-top: 30px;
+	    }
+
+	    &:not(.yondu-table__action):last-child {
+	      padding-bottom: 30px;
+	    }
+
+	    &:not(.yondu-table__action):before {
+	      content: attr(title)": "; // who knew you could do this? The internet, that's who.
+	      font-weight: bold;
+
+	      // optional stuff to make it look nicer
+	      width: 40%; // magic number :( adjust according to your own content
+	      display: inline-block;
+	      // end options
+	      
+	      @media screen and #{breakpoint(medium)} {
+	        display: none;
+	      }
+	    }
+  	}
+  }
+}

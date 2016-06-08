@@ -29,4 +29,11 @@ $(document).ready(function(){
 		nliApp.offCanvasTransform(params);
 	});
 
+	var initModule = function(){
+		nliApp.initFilter();
+		nliApp.initDataTables();
+	};
+
+	initModule();
+
 });

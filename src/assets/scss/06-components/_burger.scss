@@ -1,18 +1,18 @@
 .nli-hamburger-menu{
 	&__button{
 
-	  @include btn(72px, 72px);
+	  @include btn(50px, 50px);
 	  
 	  .icon {
 	  	transition: all 0.5s;
-	    @include icon(4px, 36px, $nli-brown-text);
+	    @include icon(3px, 28px, $nli-brown-text);
 	    
 	    &:before{
-	      @include icon-before(4px, 36px, -12px, $nli-brown-text);
+	      @include icon-before(3px, 28px, -10px, $nli-brown-text);
 	    }
 	    
 	    &:after{
-	      @include icon-after(4px, 36px, 12px, $nli-brown-text);
+	      @include icon-after(3px, 28px, 10px, $nli-brown-text);
 	    }
 	  }
 	  
@@ -22,11 +22,11 @@
 	      background: transparent;
 	      
 	      &:before{
-	        transform: rotateZ(45deg) scaleX(1.25) translate(6px, 7px);
+	        transform: rotateZ(45deg) scaleX(1.25) translate(6px, 6px);
 	      }
 
 	      &:after{
-	        transform: rotateZ(-45deg) scaleX(1.25) translate(8px, -10px);
+	        transform: rotateZ(-45deg) scaleX(1.25) translate(7px, -7px);
 	      }
 	    }
 	  }

@@ -23,7 +23,7 @@
 			display: inline-block;
 			font-size: 18px;
 			margin-right: 10px;
-			color: $nli-brown-dark;
+			color: $nli-brown-text;
 		}
 
 		input{
@@ -34,10 +34,15 @@
 			padding: 24px;
 			padding-left: 48px;
 
+			background-color: transparent;
+			transition: all .25s;
+
 			&:focus{
 				border: none;
-				border-bottom: 1px solid $nli-brown-text;
+				border-bottom: 1px solid $nli-blue;
 				box-shadow: none;
+
+				background-color: transparent;
 			}
 		}
 	}
