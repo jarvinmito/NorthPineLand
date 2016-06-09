@@ -1,0 +1,20 @@
+.yondu-nli-activities{
+	@include breakpoint(small only){
+		display: none;
+	}
+	
+	&--mobile{
+		@include breakpoint(medium up){
+			display: none;
+		}
+	}
+
+	
+	&__record{
+		&, &.row{
+			margin: 0;
+			padding: 10px 0;
+		}
+
+	}
+}

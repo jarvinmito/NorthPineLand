@@ -1,5 +1,6 @@
 .nli-btns{
 	text-transform: uppercase;
+	margin-bottom: 10px;
 		
 	&--primary{
 		&.button{
@@ -22,6 +23,19 @@
 			&:hover, &:active, &.active{
 				background-color: $nli-gray-dark;
 			}
+		}
+	}
+
+
+	&--icons{
+		margin-left: 5px;
+		color: $nli-gray-text;
+		font-size: 14px;
+
+		transition: all .25s;
+
+		&:hover, &:active, &.active{
+			color: $nli-blue;
 		}
 	}
 }

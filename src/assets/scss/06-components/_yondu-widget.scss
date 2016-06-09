@@ -1,0 +1,25 @@
+.yondu-widget{
+	background-color: $white;
+	box-shadow: none;
+	border: none;
+	margin-bottom: 10px;
+
+	&__title{
+		background-color: $gray-bright;
+		padding: 10px;
+		font-weight: bold;
+		font-size: 16px;
+	}
+
+	&__content{
+		padding-top: 10px;
+
+		&.row{
+			margin: 0;
+		}
+	}
+
+	hr{
+		margin: 5px auto;
+	}
+}

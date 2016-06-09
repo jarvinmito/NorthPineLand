@@ -1,0 +1,42 @@
+.yondu-forms{
+	
+	&__input{
+		margin-bottom: 10px;
+		box-shadow: none;
+		border: 1px solid $gray-light;
+		font-size: 14px;
+		font-weight: normal;
+
+		&.hidden{
+			visibility: hidden;
+			height: 0;
+			width: 0;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	&__label{
+		font-weight: bold;
+		font-size: 12px;
+	}
+
+	&__data{
+		font-size: 14px;
+
+		&.currency{
+			position: relative;
+			padding-left: 10px;
+
+			&:before{
+				content: "P";
+				position: absolute;
+				top: 4px;
+				left: 0px;
+
+				font-size: 10px;
+			}
+		}
+	}
+
+}

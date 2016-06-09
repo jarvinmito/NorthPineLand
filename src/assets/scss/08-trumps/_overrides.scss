@@ -16,6 +16,7 @@
 /* Data Tables overrides */
 .dataTables_wrapper{
 	background-color: transparent;
+    width: 100%;
 
     & > .row:first-child{
         display: none;

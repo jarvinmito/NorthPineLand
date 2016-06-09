@@ -7,6 +7,10 @@
 		&, &.small{
 			padding-top: 20px;
 			padding-bottom: 20px;
+
+			@include breakpoint(medium up) {
+				margin-right: -5px;
+			}
 		}
 
 
@@ -49,6 +53,26 @@
 			}
 		}
 
+	}
+
+
+	&__link{
+		position: relative;
+		display: block;
+		padding: 10px;
+		width: 100%;
+
+		color: $nli-gray-text;
+
+		.fa{
+			position: absolute;
+			top: 14px;
+			right: 12px;
+		}
+
+		&:hover, &:active{
+			color: $nli-blue;
+		}
 	}
 
 }
