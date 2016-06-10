@@ -18,9 +18,7 @@
                 <div class="nli-menu__content">
                   <h1>NorthPine Logo here</h1>
                   <ul class="nli-menu__main-page vertical menu">
-                    <li><a href="#"><i class="fa fa-ban"></i>Projects</a></li>
-                    <li><a href="#"><i class="fa fa-ban"></i>Activities</a></li>
-                    <li><a href="#"><i class="fa fa-ban"></i>Commissions</a></li>
+              
                   </ul>
                   <hr>
                   <ul class="nli-menu__settings vertical menu">
@@ -48,9 +46,7 @@
                     <div id="responsive-menu">
                       <div class="top-bar-left">
                         <ul class="menu nli-page-menu">
-                          <li class="active"><a href="#"><span>Projects</span></a></li>
-                          <li><a href="#"><span>Activities</span></a></a></li>
-                          <li><a href="#"><span>Commissions</span></a></a></li>
+                
                         </ul>
                       </div>
                       <div class="top-bar-right nli-user-menu">
@@ -84,43 +80,62 @@
                 </header>
           
                 <section class="main-container">
+                  <div class="expanded row yondu-dashboard yondu-widget__topbar align-middle">
+                  	<div class="columns small-offset-0 small-12 medium-offset-2 medium-4">
+                  		<b class="yondu-widget__topbar__emphasis">Current Balance</b>
+                  		<span class="yondu-widget__topbar__text">as of June 9, 2016</span>
+                  		<b class="yondu-widget__topbar__emphasis bigger">P 189,983.09</b>
+                  	</div>
+                  	<div class="columns small-12 medium-4 text-right">
+                  		<span class="yondu-widget__topbar__text margin">Your last payment was <b>15,000.00</b>, paid on <b>June 1, 2016</b></span>
+                  	</div>
+                  	<div class="columns small-12 medium-2">
+                  		<a href="#" class="button nli-btns--primary expanded yondu-widget__topbar__button">View Details</a>
+                  	</div>
+                  </div>
+                  
+                  <div class="yondu-container">
+                  	<div class="row yondu-dashboard">
+                  		<div class="columns medium-3">sidepanel</div>
+                  		<div class="columns medium-9">mainpanel</div>
+                  	</div>
+                  </div>
+                  
                   <div class="yondu-container">
                     <div class="row yondu-dashboard">
-                      <div class="medium-6 columns yondu-project">
+                      <div class="medium-6 small-12 columns">
                         <!-- PROJECT SECTION -->
                         <!-- HEADER -->
-                        <div class="row">
-                  	      <h5 class="columns small-5 yondu-project__header">Communities</h5>
-                  	      <h5 class="columns small-7 yondu-project__header">Available Inventory</h5>
-                        </div>
+                        <h5 class="columns small-5 yondu-dashboard__project__label">Communities</h5>
+                        <h5 class="columns small-7 yondu-dashboard__project__label">Available Inventory</h5>
                   			
                         <!-- CALLOUT -->
-                  			<div class="yondu-project__record callout small row valign-middle">
-                  				<div class="small-4 columns yondu-project__logo"><img src="/assets/img/kahaya_logo.png" alt="Image goes here" /></div>
-                  				<div class="small-2 columns yondu-project__data"><span>14</span><small>rfo</small></div>
-                  				<div class="small-2 columns yondu-project__data"><span>38</span><small>h&amp;l / lo</small></div>
-                  				<div class="small-4 columns yondu-project__action"><a href="#" class="button expanded yondu-btn yondu-btn--secondary nomargin">View</a></div>
+                  			<div class="yondu-callout yondu-callout__project callout small row align-middle">
+                  				<div class="small-4 columns yondu-callout__project__logo"><img src="/assets/img/kahaya_logo.png" alt="Image goes here" /></div>
+                  				<div class="small-2 columns yondu-callout__project__rfo"><span>14</span><small>rfo</small></div>
+                  				<div class="small-2 columns yondu-callout__project__lot"><span>38</span><small>h&amp;l / lo</small></div>
+                  				<div class="small-4 columns yondu-callout__project__action"><a href="#" class="button expanded nli-btns nli-btns--secondary">View</a></div>
                   			</div>
                   
-                  			<div class="yondu-project__record callout small row valign-middle">
-                  				<div class="small-4 columns yondu-project__logo"><img src="/assets/img/greenwoods_logo.png" alt="Image goes here" /></div>
-                  				<div class="small-2 columns yondu-project__data"><span>14</span><small>rfo</small></div>
-                  				<div class="small-2 columns yondu-project__data"><span>38</span><small>h&amp;l / lo</small></div>
-                  				<div class="small-4 columns yondu-project__action"><a href="#" class="button expanded yondu-btn yondu-btn--secondary nomargin">View</a></div>
+                  			<div class="yondu-callout yondu-callout__project callout small row align-middle">
+                  				<div class="small-4 columns yondu-callout__project__logo"><img src="/assets/img/greenwoods_logo.png" alt="Image goes here" /></div>
+                  				<div class="small-2 columns yondu-callout__project__rfo"><span>14</span><small>rfo</small></div>
+                  				<div class="small-2 columns yondu-callout__project__lot"><span>38</span><small>h&amp;l / lo</small></div>
+                  				<div class="small-4 columns yondu-callout__project__action"><a href="#" class="button expanded nli-btns nli-btns--secondary">View</a></div>
                   			</div>
                   
-                  			<div class="yondu-project__record callout secondary small row valign-middle">
-                  				<div class="small-4 columns yondu-project__logo">Total</div>
-                  				<div class="small-2 columns yondu-project__data"><span>14</span><small>rfo</small></div>
-                  				<div class="small-2 columns yondu-project__data"><span>38</span><small>h&amp;l / lo</small></div>
-                  				<div class="small-4 columns yondu-project__action"><a href="#" class="button expanded yondu-btn yondu-btn--secondary nomargin">View All</a></div>
+                  			<div class="yondu-callout yondu-callout__project secondary callout small row align-middle">
+                  				<div class="small-4 columns yondu-callout__project__logo">Total</div>
+                  				<div class="small-2 columns yondu-callout__project__rfo"><span>28</span><small>rfo</small></div>
+                  				<div class="small-2 columns yondu-callout__project__lot"><span>76</span><small>h&amp;l / lo</small></div>
+                  				<div class="small-4 columns yondu-callout__project__action"></div>
                   			</div>
                   
                       </div>
                   
                       <!-- CALCULATOR -->
                       <div class="small-6 medium-6 large-3 columns text-left yondu-dashboard__computation">
-                  			<div class="yondu-widget yondu-calculator">
+                  			<div class="yondu-widget yondu-nli-calculator">
                   				<div class="yondu-widget__title">Sample Computation</div>
                   				<div class="yondu-widget__content row">
                   					<div class="columns medium-6 large-12">
@@ -177,11 +192,11 @@
                   						<p class="yondu-forms__data currency">1,989,833.99</p>
                   					</div>
                   
-                  					<div class="columns medium-6"><a href="#" class="button expanded yondu-btn yondu-btn--secondary">Reset</a></div>
-                  					<div class="columns medium-6"><a href="#" class="button expanded yondu-btn yondu-btn--secondary">Generate</a></div>
+                  					<div class="columns medium-6"><a href="#" class="button expanded nli-btns nli-btns--secondary">Reset</a></div>
+                  					<div class="columns medium-6"><a href="#" class="button expanded nli-btns nli-btns--secondary">Generate</a></div>
                   				</div>
                   			</div>
-                  			<div class="yondu-widget--onmobile yondu-callout callout small align-middle">
+                  			<div class="yondu-nli-calculator--mobile yondu-callout callout small align-middle">
                   				<a href="#" class="yondu-callout__link">Calculator <i class="fa fa-chevron-right"></i></a>
                     		</div>
                   
@@ -190,55 +205,57 @@
                       <!--  ACTIVITIES -->
                       <div class="medium-offset-6 large-offset-0 medium-6 small-6 large-3 columns text-left yondu-dashboard__activities">
                   			
-                  			<div class="yondu-widget yondu-activities">
+                  			<div class="yondu-widget yondu-nli-activities">
                   				<div class="yondu-widget__title">
-                  					Activities <a href="#" class="button yondu-btn--secondary"><i class="fa fa-plus"></i></a>
+                  					Activities
+                  					<input type="text" placeholder="Type activity here..." class="yondu-forms__input">
+                  					<input type="text" placeholder="Date" class="yondu-forms__input hidden">
                   				</div>
                   				<div class="yondu-widget__content row">
-                  					<div class="columns"><label for="" class="yondu-forms__label">Activities for today: June 9, 2016</label></div>
+                  					<div class="columns medium-12"><label for="" class="yondu-forms__label">Activities for today: June 9, 2016</label></div>
                   				</div>
                   				<hr>
                   				
-                  				<div class="yondu-widget__record row">
-                  					<div class="columns medium-8"><p class="yondu-forms__data nomargin">Client Meeting</p></div>
+                  				<div class="yondu-nli-activities__record row">
+                  					<div class="columns medium-8">Client Meeting</div>
                   					<div class="columns medium-4">
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-search"></i></a>
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-pencil"></i></a>
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-remove"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-search"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-pencil"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-remove"></i></a>
                   					</div>
                   				</div>
-                  				<div class="yondu-widget__record row">
-                  					<div class="columns medium-8"><p class="yondu-forms__data nomargin">Recruitment</p></div>
+                  				<div class="yondu-nli-activities__record row">
+                  					<div class="columns medium-8">Recruitment</div>
                   					<div class="columns medium-4">
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-search"></i></a>
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-pencil"></i></a>
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-remove"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-search"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-pencil"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-remove"></i></a>
                   					</div>
                   				</div>
-                  				<div class="yondu-widget__record row">
-                  					<div class="columns medium-8"><p class="yondu-forms__data nomargin">Ocular Visit to site...</p></div>
+                  				<div class="yondu-nli-activities__record row">
+                  					<div class="columns medium-8">Ocular Visit to site...</div>
                   					<div class="columns medium-4">
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-search"></i></a>
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-pencil"></i></a>
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-remove"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-search"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-pencil"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-remove"></i></a>
                   					</div>
                   				</div>
-                  				<div class="yondu-widget__record row">
-                  					<div class="columns medium-8"><p class="yondu-forms__data nomargin">Lorem Ipsum</p></div>
+                  				<div class="yondu-nli-activities__record row">
+                  					<div class="columns medium-8">Lorem Ipsum</div>
                   					<div class="columns medium-4">
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-search"></i></a>
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-pencil"></i></a>
-                  						<a href="#" class="yondu-btn--icons"><i class="fa fa-remove"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-search"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-pencil"></i></a>
+                  						<a href="#" class="nli-btns--icons"><i class="fa fa-remove"></i></a>
                   					</div>
                   				</div>
                   
                   				<div class="yondu-widget__content row">
-                  					<div class="columns"><a href="#" class="button expanded yondu-btn yondu-btn--secondary">View all</a></div>
+                  					<div class="columns medium-12"><a href="#" class="button expanded nli-btns nli-btns--secondary">View all</a></div>
                   				</div>
                   				
                   			</div>
                   
-                  			<div class="yondu-widget--onmobile yondu-callout callout small align-middle">
+                  			<div class="yondu-nli-activities--mobile yondu-callout callout small align-middle">
                   				<a href="#" class="yondu-callout__link">Activities <i class="fa fa-chevron-right"></i></a>
                       	</div>
                       </div>

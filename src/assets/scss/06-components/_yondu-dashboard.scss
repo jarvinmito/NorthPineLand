@@ -1,33 +1,35 @@
 .yondu-dashboard{
-	&__project{
-		&__label{
-			margin-bottom: 10px;
-			padding: 0;
-		}
-	}
 
-
-	&__computation{
-		padding-left: 0;
-		padding-right: 5px;
-	}
-
-	&__activities{
+	& > .columns{
 		padding-left: 5px;
-		padding-right: 0;
-	}
+		padding-right: 5px;
 
-	&__computation, &__activities{
-		font-size: 14px;
-
-		@include breakpoint(medium only){
-			padding-left: 0;
-			padding-right: 0;
+		& > .row{
+			margin-left: 0;
+			margin-right: 0;
 		}
 	}
 	
-	// Generic Widget properties
-	&__widget{
-		
-	}
+	// &__project{
+	// }
+
+
+	// &__computation{
+	// 	padding-left: 0;
+	// 	padding-right: 5px;
+	// }
+
+	// &__activities{
+	// 	padding-left: 5px;
+	// 	padding-right: 0;
+	// }
+
+	// &__computation, &__activities{
+	// 	font-size: 14px;
+
+	// 	@include breakpoint(medium only){
+	// 		padding-left: 0;
+	// 		padding-right: 0;
+	// 	}
+	// }
 }

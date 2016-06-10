@@ -1,4 +1,4 @@
-.yondu-nli-activities{
+.yondu-activities{
 	@include breakpoint(small only){
 		display: none;
 	}
@@ -15,6 +15,5 @@
 			margin: 0;
 			padding: 10px 0;
 		}
-
 	}
 }

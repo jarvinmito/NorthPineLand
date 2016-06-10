@@ -4,7 +4,7 @@
 	  @include btn(50px, 50px);
 	  
 	  .icon {
-	  	transition: all 0.5s;
+	  	// transition: all 0.5s;
 	    @include icon(3px, 28px, $nli-brown-text);
 	    
 	    &:before{
@@ -18,8 +18,9 @@
 	  
 	  &.open {
 	    .icon {
-	      transition-duration: 0.5s;
-	      background: transparent;
+	      // transition: all 0.5s;
+	      // transition-duration: 0.5s;
+	      background-color: transparent;
 	      
 	      &:before{
 	        transform: rotateZ(45deg) scaleX(1.25) translate(6px, 6px);

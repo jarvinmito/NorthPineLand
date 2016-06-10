@@ -10,13 +10,21 @@ header{
       content: "";
 
       position: absolute;
-      top: 72px;
+      top: 71px;
       left: -10px;
-
       background-image: url('/assets/img/nbar_left.svg');
       background-position: top left;
-      width: 260px;
-      height: 60px;
+      
+      background-size: 180px 42px;
+      width: 180px;
+      height: 42px;
+      
+      @include breakpoint(large up){
+        background-size: 260px 60px;
+        width: 260px;
+        height: 60px;
+      }
+
       z-index: 1;
     }
 

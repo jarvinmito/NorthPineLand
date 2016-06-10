@@ -117,3 +117,14 @@ table.dataTable thead th.sorting_desc:after {
         }
     }
 }
+
+
+
+// Foundation Tabs override
+.tabs-content{
+    background-color: transparent;
+}
+
+.tabs-panel{
+    padding: 0;
+}

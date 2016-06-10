@@ -1,0 +1,16 @@
+<select name="" id="" class="yondu-menu input">
+	<option value="Statement of Account" {{#ifpage 'dashboard-buyer'}}selected{{/ifpage}} >Statement of Account</option>
+	<option value="Payment History" {{#ifpage 'payments-made'}}selected{{/ifpage}} >Payments made</option>
+	<option value="Overdue Payment" {{#ifpage 'overdue-payment'}}selected{{/ifpage}} >Overdue Payment</option>
+	<option value="Due for the Year"  {{#ifpage 'due-for-the-year'}}selected{{/ifpage}} >Due for the Year</option>
+	<option value="Discounts" {{#ifpage 'discounts'}}selected{{/ifpage}} >Discounts</option>
+	<option value="Miscellaneous" {{#ifpage 'miscellaneous'}}selected{{/ifpage}} >Miscellaneous</option>
+</select>
+<ul class="yondu-menu menu vertical">
+	<li><a href="#" {{#ifpage 'dashboard-buyer'}}class="active"{{/ifpage}} >Statement of Account</a></li>
+	<li><a href="#" {{#ifpage 'payments-made'}}class="active"{{/ifpage}} >Payment made</a></li>
+	<li><a href="#" {{#ifpage 'overdue-payment'}}class="active"{{/ifpage}}>Overdue Payment</a></li>
+	<li><a href="#" {{#ifpage 'due-for-the-year'}}class="active"{{/ifpage}}>Due for the Year</a></li>
+	<li><a href="#" {{#ifpage 'discounts'}}class="active"{{/ifpage}}>Discounts</a></li>
+	<li><a href="#" {{#ifpage 'miscellaneous'}}class="active"{{/ifpage}}>Miscellaneous</a></li>
+</ul>

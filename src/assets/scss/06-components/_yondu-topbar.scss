@@ -1,0 +1,86 @@
+.yondu-topbar{
+
+	& > .columns:first-child{
+		display: none;
+	}
+
+	@include breakpoint(medium up){
+		display: table;
+		width: 100%;
+
+	    > .columns, > .columns:first-child {
+	        display: table-cell;
+	        vertical-align: middle;
+	    }
+
+	    > .columns, > [class*="column"] + [class*="column"]:last-child {
+	        float: none;
+	    }
+	}
+
+
+	padding: 10px;
+	
+	&__text, &__emphasis{
+
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0;
+		padding: 0;
+	}
+	&__text{
+		font-size: 14px;
+		
+		&.margin{
+			margin-bottom: 10px;
+
+			@include breakpoint(medium up){
+				margin: 0;
+			}
+		}
+
+		@include breakpoint(medium up){
+			font-size: 12px;
+		}
+
+		@include breakpoint(large up){
+			font-size: 14px;
+		}
+	}
+
+	&__emphasis{
+		font-weight: bold;
+		font-size: 18px;
+
+		@include breakpoint(medium up){
+			font-size: 12px;
+		}
+
+		&.bigger{
+			font-size: 24px;
+
+			@include breakpoint(medium only){
+				font-size: 12px;
+				margin-left: 5px;
+			}
+			@include breakpoint(large up){
+				font-size: 14px;
+			}
+		}
+		
+	}
+
+	&__button{
+		margin: 0;
+	}
+
+	& > .columns{
+		text-align: center;
+		padding-left: 5px;
+		padding-right: 5px;
+
+		@include breakpoint(medium up){
+			text-align: left;
+		}
+	}
+}

@@ -1,0 +1,55 @@
+.yondu-tabs{
+
+	&__link{
+
+		&.tabs{
+			background: transparent;
+			background-color: $gray-light;
+			border: none;
+		}
+
+		> .tabs-title{
+
+			> a{
+
+				display: block;
+				padding: 15px 0;
+				text-align:center;
+
+				font-size: 12px;
+				color: $nli-gray-text;
+
+			}
+
+			&.is-active, &:hover, &:active{
+				> a, & {
+
+					&, &:focus, &[aria-selected="true"]{
+						background-color: $nli-brown-text;
+						color: $white;
+					}
+				}
+			}
+
+		}
+
+		@include breakpoint(medium up){
+			display: none;
+		}
+	}
+
+	&__content{
+		h5{
+			padding-top: 15px;
+			display: block;
+		}
+
+		@include breakpoint(medium up){
+			display: block;
+
+			&:not(:first-child){
+				border-top: 1px solid $gray-light;
+			}
+		}
+	}
+}

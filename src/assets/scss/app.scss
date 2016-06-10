@@ -6,7 +6,7 @@
 
 @include foundation-global-styles;
 @include foundation-grid;
-@include foundation-flex-grid;
+// @include foundation-flex-grid;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -44,7 +44,7 @@
 @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-@include foundation-flex-classes;
+// @include foundation-flex-classes;
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
@@ -61,6 +61,8 @@
 @import "02-tools/clearfix";
 @import "02-tools/mixins";
 @import "02-tools/text-align";
+@import "02-tools/alignment";
+@import "02-tools/margin";
 
 // GENERIC
 @import "03-generic/font-awesome";
@@ -78,19 +80,24 @@
 @import "05-objects/footer";
 
 // COMPONENTS
-@import "06-components/buttons";
+// @import "06-components/buttons";
 @import "06-components/burger";
 @import "06-components/nli-menu";
 @import "06-components/login";
+@import "06-components/yondu-btn";
 @import "06-components/yondu-dashboard";
 @import "06-components/yondu-widget";
-@import "06-components/yondu-nli-calculator";
-@import "06-components/yondu-nli-activities";
+@import "06-components/yondu-topbar";
+@import "06-components/yondu-menu";
+@import "06-components/yondu-tabs";
+// @import "06-components/yondu-nli-calculator";
+// @import "06-components/yondu-nli-activities";
 @import "06-components/yondu-callout";
 @import "06-components/yondu-container";
 @import "06-components/yondu-filter";
 @import "06-components/yondu-table";
 @import "06-components/yondu-forms";
+@import "06-components/yondu-project";
 
 // THEMES
 // @import "07-themes/default";

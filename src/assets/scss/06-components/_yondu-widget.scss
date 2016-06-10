@@ -4,11 +4,37 @@
 	border: none;
 	margin-bottom: 10px;
 
+	@include breakpoint(small only){
+		display: none;
+	}
+
+	&__record{
+		&, &.row{
+			margin: 0;
+			padding: 5px 0;
+		}
+	}
+	
+	&--onmobile{
+		@include breakpoint(medium up){
+			display: none;
+		}
+	}
+
 	&__title{
 		background-color: $gray-bright;
 		padding: 10px;
 		font-weight: bold;
 		font-size: 16px;
+
+		position: relative;
+
+		.button{
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+		}
 	}
 
 	&__content{
@@ -16,7 +42,35 @@
 
 		&.row{
 			margin: 0;
+
+			& > div.columns{
+				padding-left: 10px;
+				padding-right: 10px;
+				margin-bottom: 0;
+
+				input{
+					margin-bottom: 10px;
+				}
+
+				&.medium-6{
+					&:nth-child(odd){
+						padding-right: 5px;
+					}
+					&:nth-child(even){
+						padding-left: 5px;
+					}
+
+					&.large-12{
+						@include breakpoint(large up) {
+							padding-left: 10px;
+							padding-right: 10px;
+						}
+					}
+				}
+			}
 		}
+
+
 	}
 
 	hr{

@@ -20,7 +20,7 @@
 }
 
 @mixin icon($height, $width, $color) {
-  transition-property: background-color;
+  transition-property: all;
   transition-duration: 0.5s;
   position: absolute;
   height: $height;

@@ -1,0 +1,45 @@
+.yondu-btn{
+	text-transform: uppercase;
+	margin-bottom: 10px;
+
+	&.nomargin{
+		margin: 0;
+	}
+		
+	&--primary{
+		&.button{
+			&, &:link, &:visited{
+				background-color: $nli-blue;
+			}
+
+			&:hover, &:active, &.active{
+				background-color: $nli-blue-dark;
+			}
+		}
+	}
+
+	&--secondary{
+		&.button{
+			&, &:link, &:visited{
+				background-color: $nli-gray;
+			}
+
+			&:hover, &:active, &.active{
+				background-color: $nli-gray-dark;
+			}
+		}
+	}
+
+
+	&--icons{
+		margin-left: 5px;
+		color: $nli-gray-text;
+		font-size: 14px;
+
+		transition: all .25s;
+
+		&:hover, &:active, &.active{
+			color: $nli-blue;
+		}
+	}
+}

@@ -1,0 +1,90 @@
+<div class="yondu yondu-filter row">
+  <div id="yondu-filter--reponsive" class="yondu-filter--left medium-9 small-12 columns">
+    <div data-responsive-toggle="yondu-filter--reponsive">
+      <button class="close-button yondu-filter__btn--hide" aria-label="Close menu" type="button" data-toggle>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="medium-1 small-12 columns">
+      <label for="yondu-category" class="middle">Filter</label>
+      <!-- Close button -->
+    </div>
+    <div class="medium-3 small-12 columns">
+      <select name="" id="yondu-category" class="selectpicker yondu-form yondu-form--min form-control yondu-filter__category">
+        <option value="none" selected>-</option>
+        <option value="text">Creator</option>
+        <option value="dropdown">Status</option>
+        <!-- <option value="date">Date</option> -->
+        <!-- <option value="daterange">Date Range</option> -->
+      </select>
+    </div>
+    <div class="medium-4 small-12 columns">
+      <label for="" class="yondu-filter__type text-right middle" data-filter-type="none">No filter applied</label>
+      <input type="text" class="form-control yondu-form yondu-form--min yondu-filter__type" data-filter-type="text" placeholder="Search here">
+      <select name="" id="" class="selectpicker yondu-form yondu-form--min form-control yondu-filter__type" data-filter-type="dropdown">
+        <option value="">Option 1</option>
+        <option value="">Option 2</option>
+        <option value="">Option 3</option>
+        <option value="">Option 4</option>
+        <option value="">Option 5</option>
+      </select>
+
+      <div class="yondu-filter__type yondu-filter__type--date" data-filter-type="daterange">
+        <div class='yondu-filter__date' data-role="from">
+          <input type='text' class="form-control yondu-form yondu-form--min" placeholder="From" />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+        <div class='yondu-filter__date' data-role="to">
+          <input type='text' class="form-control yondu-form yondu-form--min" placeholder="To" />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+
+      <div class="yondu-filter__type yondu-filter__type--date" data-filter-type="date">
+        <div class='yondu-filter__date'>
+          <input type='text' class="form-control yondu-form yondu-form--min" placeholder="Select Date" />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="medium-4 small-12 columns">
+    	<div class="row yondu-filter__buttons">
+      	<div class="small-6 columns">
+	        <button type="button" class="button yondu-btn--primary expanded yondu-filter__btn--search" data-callback="ajax_function_here">Search</button>
+      	</div>
+      	<div class="small-6 columns">
+	        <button type="button" class="button yondu-btn--secondary expanded yondu-filter__btn--clear">Clear</button>
+      	</div>
+    	</div>
+    </div>
+  </div>
+
+
+  <div class="small-6 columns yondu-filter--center" data-responsive-toggle="yondu-filter--reponsive" data-hide-for="medium">
+  	<div class="small-12 columns">
+    	<button type="button" class="button yondu-btn--primary expanded yondu-filter__btn--show" data-toggle>Show Filter</button>
+  	</div>
+  </div>
+
+  <div class="medium-3 small-6 columns yondu-filter--right">
+    <div class="medium-6 small-5 columns">
+      <label for="" class="text-right middle">Entries</label>
+    </div>
+    <div class="medium-6 small-7 columns">
+      <select name="" id="" class="selectpicker yondu-form yondu-form--min form-control yondu-filter__entries yondu-filter__last">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </div>
+
+</div>

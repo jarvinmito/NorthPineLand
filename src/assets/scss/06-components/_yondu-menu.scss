@@ -1,0 +1,26 @@
+.yondu-menu{
+	
+	&.menu{
+		display: none;
+
+		> li{
+			> a{
+				width: 100%;
+				padding: 15px;
+				font-size: 14px;
+				color: $nli-brown-text;
+
+				&:hover, &:active, &.active{
+					color: $white;
+					background-color: $nli-brown-text;
+				}
+			}
+		}
+	}
+
+	@include breakpoint(medium up){
+		&.menu{ display: block; }
+		&.input{ display: none; }
+	}
+
+}

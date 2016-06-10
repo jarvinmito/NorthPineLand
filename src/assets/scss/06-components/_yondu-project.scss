@@ -1,0 +1,62 @@
+.yondu-project{
+
+	&__header{
+		margin-bottom: 10px;
+		padding: 0;
+	}
+
+	&__record{
+		border: none;
+		width: 100%;
+
+		&, &.small{
+			padding-top: 20px;
+			padding-bottom: 20px;
+			margin: 0 0 15px;
+
+			@include breakpoint(medium up) {
+				margin-right: -5px;
+			}
+		}
+	}
+
+	&__logo, &__data, &__action{
+		
+	}
+
+	&__logo{
+		text-align: center;
+		
+		& > img{
+			max-height: 48px;
+			width: auto;
+
+			border: none;
+		}
+	}
+
+	&__data{
+		padding-left: 0;
+		padding-right: 0;
+
+		text-align: center;
+
+		& > span, & > small{
+			display: block;
+			margin: 0;
+			padding: 0;
+
+			text-transform: uppercase;
+		}
+
+		& > span{
+			font-size: 16px;
+		}
+
+		& > small{
+			font-size: 10px;
+		}
+
+	}
+
+}

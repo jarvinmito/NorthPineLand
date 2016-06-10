@@ -3,9 +3,16 @@
   <div class="nli-menu__content">
     <h1>NorthPine Logo here</h1>
     <ul class="nli-menu__main-page vertical menu">
-      <li><a href="#"><i class="fa fa-ban"></i>Projects</a></li>
-      <li><a href="#"><i class="fa fa-ban"></i>Activities</a></li>
-      <li><a href="#"><i class="fa fa-ban"></i>Commissions</a></li>
+      {{#ifpage 'dashboard-buyer' 'payments-made' 'overdue-payment' 'due-for-the-year' 'discounts' 'miscellaneous'}}
+        <li><a href="#"><i class="fa fa-ban"></i>Statement of Account</a></li>
+        <li><a href="#"><i class="fa fa-ban"></i>Contact Us</a></li>
+      {{/ifpage}}
+
+      {{#ifpage 'dashboard-seller'}}
+        <li><a href="#"><i class="fa fa-ban"></i>Projects</a></li>
+        <li><a href="#"><i class="fa fa-ban"></i>Activities</a></li>
+        <li><a href="#"><i class="fa fa-ban"></i>Commissions</a></li>
+      {{/ifpage}}
     </ul>
     <hr>
     <ul class="nli-menu__settings vertical menu">

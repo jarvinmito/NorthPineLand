@@ -7,9 +7,16 @@
     <div id="responsive-menu">
       <div class="top-bar-left">
         <ul class="menu nli-page-menu">
-          <li class="active"><a href="#"><span>Projects</span></a></li>
-          <li><a href="#"><span>Activities</span></a></a></li>
-          <li><a href="#"><span>Commissions</span></a></a></li>
+          {{#ifpage 'dashboard-seller'}}
+            <li class="active"><a href="#"><span>Projects</span></a></li>
+            <li><a href="#"><span>Activities</span></a></a></li>
+            <li><a href="#"><span>Commissions</span></a></a></li>
+          {{/ifpage}}
+
+          {{#ifpage 'dashboard-buyer' 'payments-made' 'overdue-payment' 'due-for-the-year' 'discounts' 'miscellaneous' 'contact-us' 'my-profile' 'change-password'}}
+            <li class="active"><a href="#"><span>Statement of Account</span></a></li>
+            <li><a href="#"><span>Contact Us</span></a></a></li>
+          {{/ifpage}}
         </ul>
       </div>
       <div class="top-bar-right nli-user-menu">

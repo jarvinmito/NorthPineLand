@@ -1,4 +1,7 @@
 .main-container{
+	position: relative;
+	z-index: 0;
+	
 	width: 100%;
 	min-height: 300px;
 	box-shadow: inset 0 90px 150px -100px $black;
