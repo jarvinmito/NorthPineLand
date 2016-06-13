@@ -204,11 +204,34 @@ var nliApp = (function(){
 		});
 	};
 
+	var initMapModal = function(){
+		var modal = $('#mapModal');
+		$(document).on('click', '[data-is-map]', function(e){
+			e.preventDefault();
+
+			var url = $(this).data('url');
+			console.log(url);
+			modal.find('img.yondu-modal__image').attr('src', url);
+			modal.foundation('open');
+		});
+	};
+
+	var initLotModal = function(){
+		var modal = $('#lotsModal');
+		$(document).on('click', '[data-is-lot]', function(e){
+			e.preventDefault();
+			modal.foundation('open');
+		});
+	};
+
+
 	return {
 		offCanvasTransform : offCanvasTransform,
 		initFilter : initFilter,
 		initDataTables : initDataTables,
-		initConfirm : initConfirm
+		initConfirm : initConfirm,
+		initLotModal : initLotModal,
+		initMapModal : initMapModal
 	};
 
 }());

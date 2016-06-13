@@ -5,6 +5,7 @@
 
 
 <!-- modals -->
+<!-- confirmation modal -->
 <div class="reveal tiny yondu-modal" id="confirmModal" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out">
   <p class="lead">Are you sure you want to delete?</p>
   <!-- <button class="close-button" data-close aria-label="Close reveal" type="button">
@@ -12,4 +13,23 @@
   </button> -->
   <a class="button yondu-btn yondu-btn--secondary nomargin" data-open="exampleModal3">Yes</a>
   <a class="button yondu-btn yondu-btn--secondary nomargin" data-close>No</a>
+</div>
+
+<!-- vicinity map modal -->
+<div class="reveal full yondu-modal" id="mapModal" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out">
+  <button class="close-button" data-close aria-label="Close reveal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p class="lead">Vicinity Map</p>
+  <img src="" alt="" class="yondu-modal__image"/>
+</div>
+
+<!-- available lots modal -->
+<div class="reveal large yondu-modal" id="lotsModal" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out">
+  <button class="close-button" data-close aria-label="Close reveal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+	<p class="lead">Available Lots</p>
+  {{>yondu-filter}}
+  {{>yondu-table}}
 </div>

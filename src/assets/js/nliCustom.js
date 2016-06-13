@@ -33,6 +33,8 @@ $(document).ready(function(){
 		nliApp.initFilter();
 		nliApp.initDataTables();
 		nliApp.initConfirm();
+		nliApp.initLotModal();
+		nliApp.initMapModal();
 	};
 
 	initModule();

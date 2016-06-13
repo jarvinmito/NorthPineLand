@@ -1,3 +1,13 @@
 .yondu-modal{
 	text-align: center;
+
+
+	&__image{
+		width: 100%;
+		height: auto;
+	}
+
+	&#mapModal, &#lotsModal{
+		text-align: left;
+	}
 }

@@ -143,6 +143,8 @@
 
   	td{
   		display: block;
+  		position: relative;
+  		padding-left: 40% !important;
 
   		&.yondu-table__action{
   			position:absolute;
@@ -163,12 +165,14 @@
 	    }
 
 	    &:not(.yondu-table__action):before {
+	    	position: absolute;
 	      content: attr(title)": "; // who knew you could do this? The internet, that's who.
 	      font-weight: bold;
 
 	      // optional stuff to make it look nicer
 	      width: 40%; // magic number :( adjust according to your own content
 	      display: inline-block;
+	      left: 10px;
 	      // end options
 	      
 	      @media screen and #{breakpoint(medium)} {
