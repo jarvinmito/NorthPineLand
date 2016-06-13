@@ -32,6 +32,7 @@ $(document).ready(function(){
 	var initModule = function(){
 		nliApp.initFilter();
 		nliApp.initDataTables();
+		nliApp.initConfirm();
 	};
 
 	initModule();

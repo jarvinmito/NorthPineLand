@@ -58,6 +58,6 @@ PATHS:
     # Paths to your own project code are here
     - "src/assets/js/!(app).js"
     - "src/assets/js/app.js"
+    - "src/assets/js/datatables.foundation.js"
     - "src/assets/js/nliApp.js"
     - "src/assets/js/nliCustom.js"
-    - "src/assets/js/datatables.foundation.js"

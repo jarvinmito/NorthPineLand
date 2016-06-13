@@ -189,10 +189,26 @@ var nliApp = (function(){
 
 	};
 
+
+	var initConfirm = function(){
+		var elements = $('[data-confirm]');
+		var modal = $('#confirmModal');
+
+		$(document).on('click', '[data-confirm]', function(e){
+			e.preventDefault();
+			modal.foundation('open');
+		});
+
+		modal.on('closeme.zf.reveal', function(){
+			console.log('open sesame');
+		});
+	};
+
 	return {
 		offCanvasTransform : offCanvasTransform,
 		initFilter : initFilter,
-		initDataTables : initDataTables
+		initDataTables : initDataTables,
+		initConfirm : initConfirm
 	};
 
 }());
