@@ -224,6 +224,106 @@ var nliApp = (function(){
 		});
 	};
 
+
+	var initCalculatorForm = function(){
+		var theForm = $('.yondu-calculator__form');
+
+		if( theForm.length ){
+			theForm.each(function(){
+				var currForm = $(this);
+				var downpayment = currForm.find('#nli-downpayment');
+				var totalprice = currForm.find('#nli-total-contract-price');
+				var promodiscount = currForm.find('#nli-promo-discount');
+				var paytermpromo = currForm.find('#nli-payterm-promo');
+				var prefferedterm = currForm.find('#nli-preffered-term');
+				var bankrate = currForm.find('#nli-bank-rate');
+
+				var calcBalance = function(){
+					var toFill = $('#nli-balance');
+					var data = parseInt(downpayment.val());
+					var balance = (data <= 100) ? 100 - data : 0;
+					toFill.text(balance+"%");
+				};
+
+				var calcNetListPrice = function(){
+					var netlistprice = $('#nli-net-list-price');
+					var netcontractprice = $('#nli-net-contract-price');
+					var pd = parseInt(promodiscount.val()) || 0;
+					var tp = parseInt(totalprice.val()) || 0;
+					var computed = tp - pd;
+					netlistprice.text(computed.formatMoney(2,'.',','));
+					netcontractprice.text(computed.formatMoney(2,'.',','));
+				};
+
+				var calcTotalDiscounts = function(){
+					var totaldiscount = $('#nli-total-discount');
+					var netdiscount = $('#nli-net-discount');
+					var pd = parseInt(promodiscount.val()) || 0;
+					var pt = parseInt(paytermpromo.val()) || 0;
+					var computed = pd + pt;
+					totaldiscount.text(computed.formatMoney(2,'.',','));
+					netdiscount.text(computed.formatMoney(2,'.',','));
+				};
+
+				var calcNetContractPrice = function(){
+					var netprice = $('#nli-net-contract-price');
+					var pd = parseInt(promodiscount.val()) || 0;
+					var tp = parseInt(totalprice.val()) || 0;
+					var nlp = parseInt() || 0;
+					// var computed = pd + nlp;
+					var computed = parseInt($('#nli-net-list-price').val) || 0;
+
+					netprice.text(computed.formatMoney(2,'.',','));
+				};
+
+				var calcListPriceAllDiscount = function(){
+					var listnetdiscount = $('#nli-list-net-discount');
+					var totalsellingprice = $('#nli-total-selling-price');
+					var pd = parseInt(promodiscount.val()) || 0;
+					var pt = parseInt(paytermpromo.val()) || 0;
+					var computed = pd + pt;
+					var lpad = parseInt(totalprice.val()) - computed;
+
+					listnetdiscount.text(lpad.formatMoney(2,'.',','));
+					totalsellingprice.text(lpad.formatMoney(2,'.',','));
+				};
+
+				$('input').on('keyup', function(e){
+					calcBalance();
+					calcNetListPrice();
+					calcTotalDiscounts();
+					calcListPriceAllDiscount();
+				});
+
+				// downpayment.on('keyup', function(e){
+				// 	calcBalance();
+				// 	calcBalance();
+				// });
+
+				// totalprice.on('keyup', function(e){
+				// 	console.log('minasdf!');
+				// });
+
+				// promodiscount.on('keyup', function(e){
+				// 	console.log('fudge!!');
+				// });
+
+				// paytermpromo.on('keyup', function(e){
+				// 	console.log('minasdf!');
+				// });
+
+				// prefferedterm.on('keyup', function(e){
+				// 	console.log('fudge!!');
+				// });
+
+				// bankrate.on('keyup', function(e){
+				// 	console.log('minasdf!');
+				// });
+
+			});
+		}
+	};
+
 	var initLoader = function(){
 		var loader = $('.yondu-loader');
 
@@ -249,7 +349,8 @@ var nliApp = (function(){
 		initConfirm : initConfirm,
 		initLotModal : initLotModal,
 		initMapModal : initMapModal,
-		initLoader : initLoader
+		initLoader : initLoader,
+		initCalculatorForm : initCalculatorForm
 	};
 
 }());
