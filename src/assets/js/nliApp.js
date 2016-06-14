@@ -224,6 +224,23 @@ var nliApp = (function(){
 		});
 	};
 
+	var initLoader = function(){
+		var loader = $('.yondu-loader');
+
+		var show = function(){
+			loader.fadeIn(150);
+		};
+
+		var hide = function(){
+			loader.fadeOut(150);
+		};
+
+		return {
+			show : show,
+			hide : hide
+		};
+	};
+
 
 	return {
 		offCanvasTransform : offCanvasTransform,
@@ -231,7 +248,8 @@ var nliApp = (function(){
 		initDataTables : initDataTables,
 		initConfirm : initConfirm,
 		initLotModal : initLotModal,
-		initMapModal : initMapModal
+		initMapModal : initMapModal,
+		initLoader : initLoader
 	};
 
 }());

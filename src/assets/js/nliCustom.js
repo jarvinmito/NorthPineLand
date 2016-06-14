@@ -35,6 +35,7 @@ $(document).ready(function(){
 		nliApp.initConfirm();
 		nliApp.initLotModal();
 		nliApp.initMapModal();
+		nliApp.initLoader();
 	};
 
 	initModule();
