@@ -1,35 +1,33 @@
 .yondu-table{
 
-	&__action{
-		&__button{
-			display: none;
-		}
+	&__button{
+		display: none;
+	}
 
-		&__buttons{
-			list-style: none;
-			margin: 0;
+	&__buttons{
+		list-style: none;
+		margin: 0;
 
-			& > li{
-				display: inline-block;
+		& > li{
+			display: inline-block;
 
-				& > a{
-					display: block;
-					height: 24px;
-					width: 24px;
-					border-radius: 50%;
+			& > a{
+				display: block;
+				height: 24px;
+				width: 24px;
+				border-radius: 50%;
 
-					font-size: 12px;
-					line-height: 24px;
-					background-color: $gray;
-					text-align: center;
-					color: $gray-bright;
+				font-size: 12px;
+				line-height: 24px;
+				background-color: $gray;
+				text-align: center;
+				color: $gray-bright;
 
-					transition: all .25s;
+				transition: all .25s;
 
-					&:hover, &:active{
-						background-color: $gray-dark;
-						color: $white;
-					}
+				&:hover, &:active{
+					background-color: $gray-dark;
+					color: $white;
 				}
 			}
 		}
@@ -45,6 +43,7 @@
 			font-size: 12px;
 			font-weight: bold;
 			color: $nli-gray-text;
+			text-transform: capitalize;
 		}
 	}
 
@@ -75,61 +74,57 @@
   // Small only
   .yondu-table{
 
-		&__action{
+		&__button{
+			display: block;
+			width: 32px;
+			height: 32px;
+			margin: auto 0 auto auto;
+			font-size: 24px;
+		}
 
-			&__button{
+		&__buttons{
+			display: none;
+			min-width: 120px;
+
+			list-style: none;
+			background: $white;
+			box-shadow: 0 0 20px -10px $gray;
+
+			&.expanded{
 				display: block;
-				width: 32px;
-				height: 32px;
-				margin: auto 0 auto auto;
-				font-size: 24px;
 			}
 
-			&__buttons{
-				display: none;
-				min-width: 120px;
+			& > li{
 
-				list-style: none;
-				background: $white;
-				box-shadow: 0 0 20px -10px $gray;
+				display: block;
+				text-align: left;
 
-				&.expanded{
-					display: block;
-				}
+				& > a{
+					display: inline-block;
 
-				& > li{
+					width: 100%;
+					height: auto;
+					border-radius: 0;
 
-					display: block;
+					background-color: transparent;
+
+					padding: 10px;
 					text-align: left;
 
-					& > a{
+					font-size: 14px;
+					color: $nli-gray-text;
+
+					.fa{
+						display: none;
+					}
+
+					&:after{
+						content: attr(title);
 						display: inline-block;
-
-						width: 100%;
-						height: auto;
-						border-radius: 0;
-
-						background-color: transparent;
-
-						padding: 10px;
-						text-align: left;
-
-						font-size: 14px;
-						color: $nli-gray-text;
-
-						.fa{
-							display: none;
-						}
-
-						&:after{
-							content: attr(title);
-							display: inline-block;
-							text-transform: capitalize;
-						}
+						text-transform: capitalize;
 					}
 				}
- 			}
-
+			}
 		}
 
   	thead{
