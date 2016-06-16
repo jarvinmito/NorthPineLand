@@ -348,6 +348,19 @@ var nliApp = (function(){
 					netprice.next('input[type="hidden"]').val(computed);
 				};
 
+				var calcRequiredDP = function(){
+					var dp = downpayment.val() || 0;
+					var pd = parseFloat(promodiscount.val()) || 0;
+					var pt = parseFloat(paytermpromo.val()) || 0;
+					var totalsellingprice = parseFloat(totalprice.val()) - (pd+pt);
+					var reqdp = totalsellingprice * ( dp / 100 );
+
+					var requiredownpayment = $('#nli-required-dp');
+
+					requiredownpayment.text(reqdp.formatMoney(2,'.',','));
+					requiredownpayment.next('input[type="hidden"]').val(reqdp);
+				};
+
 				var calcListPriceAllDiscount = function(){
 					var listnetdiscount = $('#nli-list-net-discount');
 					var totalsellingprice = $('#nli-total-selling-price');
@@ -364,54 +377,47 @@ var nliApp = (function(){
 					totalsellingprice.next('input[type="hidden"]').val(lpad);
 				};
 
-				var pmt = function(rate_per_period, number_of_payments, present_value, future_value, type){
-			    if(rate_per_period != 0.0){
-			        // Interest rate exists
-			        var q = Math.pow(1 + rate_per_period, number_of_payments);
-			        return -(rate_per_period * (future_value + (q * present_value))) / ((-1 + q) * (1 + rate_per_period * (type)));
+				var pmt = function(rate, nper, pv, fv, type) {
+					if (!fv) fv = 0;
+					if (!type) type = 0;
 
-			    } else if(number_of_payments != 0.0){
-			        // No interest rate, but number of payments exists
-			        return -(future_value + present_value) / number_of_payments;
-			    }
+					if (rate === 0) return 0;
+					// if (rate === 0) return -(pv + fv)/nper;
+					
+					var pvif = Math.pow(1 + rate, nper);
+					var pmt = rate / (pvif - 1) * -(pv * pvif + fv);
 
-			    return 0;
+					if (type == 1) {
+						pmt /= (1 + rate);
+					};
+
+
+					return pmt;
 				};
 
 				var calcAmortization = function(){
-					var pt = parseFloat(prefferedterm.val()) || 0;
 					var pd = parseFloat(promodiscount.val()) || 0;
-					var br = parseFloat(bankrate.val()) || 0;
+					var pt = parseFloat(paytermpromo.val()) || 0;
 					var total = parseFloat(totalprice.val()) || 0;
 					var tsellprice = ( total - ( pd + pt ));
 					var ptdp = parseFloat(downpayment.val()) || 0;
 					var rbal = tsellprice * ( ptdp / 100 );
 
-					// rbal/((1/br)-(1/(br(1+br)^pt)))
- 					// Formula
- 					// Converts bank rate percent to decimal e.g. 15% --> 0.15
- 					// bank rate is divided by the number of months in a year
- 					// payment term -- in years -- is divided by the number of months in a year
-					var monthly_amortization = -pmt(((br / 100) / 12),(pt * 12),rbal,0,0);// pt /(( br / 12 ) * (rbal));
-
-					// var obj = {
-					// 	payterm : pt,
-					// 	promodiscount : pd,
-					// 	bankrate : br,
-					// 	totalprice : total,
-					// 	totalsellingprice : tsellprice,
-					// 	ptdownpayment : ptdp,
-					// 	requiredbal : rbal,
-					// 	monthlyamor : monthly_amortization
-					// };
-
-					// console.log( obj );
+					var rate = parseFloat(bankrate.val()) || 0; //in percent
+				  var rdec = (rate / 100) / 12;
+				  var term = parseFloat(prefferedterm.val()) || 0;
+				  var tmon = term * 12;
+					var rdp = tsellprice * ( ptdp / 100 );
+				  var total = tsellprice;
+				  var pv = total - rdp;
+				  
+				  var formulae = -pmt(rdec,tmon,pv,0,0);
 
 					var amort = $('#nli-monthly-amortization');
-					amort.text(monthly_amortization.formatMoney(2,'.',','));
+					amort.text(formulae.formatMoney(2,'.',','));
 
 					// add values to hidden input fields also
-					amort.next('input[type="hidden"]').val(monthly_amortization);
+					amort.next('input[type="hidden"]').val(formulae);
 				};
 
 				var clearForm = function(){
@@ -426,6 +432,7 @@ var nliApp = (function(){
 					calcTotalDiscounts();
 					calcListPriceAllDiscount();
 					calcAmortization();
+					calcRequiredDP();
 				});
 
 				currForm.on('change', 'select', function(e){
@@ -434,6 +441,7 @@ var nliApp = (function(){
 					calcTotalDiscounts();
 					calcListPriceAllDiscount();
 					calcAmortization();
+					calcRequiredDP();
 				});
 
 				currForm.on('click', '[data-button-type]' , function(e){
