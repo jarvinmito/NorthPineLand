@@ -271,6 +271,15 @@
                 
                 <!-- modals -->
                 <!-- confirmation modal -->
+                <div class="reveal tiny yondu-modal" id="alertModal" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out">
+                  <h2 class="lead"></h2>
+                  <p></p>
+                  <button class="close-button" data-close aria-label="Close reveal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                
+                <!-- confirmation modal -->
                 <div class="reveal tiny yondu-modal" id="confirmModal" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out">
                   <p class="lead">Are you sure you want to delete?</p>
                   <!-- <button class="close-button" data-close aria-label="Close reveal" type="button">
@@ -297,7 +306,7 @@
                 	<p class="lead">Available Lots</p>
                 	<div class="yondu-modal__data">
                 		<div class="filter">
-                 			<div class="yondu yondu-filter row">
+                 			<div class="yondu yondu-filter row" data-target="#yondu-datatable-dashboard-admin-onModal">
                  			  <div id="yondu-filter--reponsive" class="yondu-filter--left medium-9 small-12 columns">
                  			    <div data-responsive-toggle="yondu-filter--reponsive">
                  			      <button class="close-button yondu-filter__btn--hide" aria-label="Close menu" type="button" data-toggle>
@@ -310,9 +319,12 @@
                  			    </div>
                  			    <div class="medium-3 small-12 columns">
                  			      <select name="" id="yondu-category" class="selectpicker yondu-form yondu-form--min form-control yondu-filter__category">
-                 			        <option value="none" selected>-</option>
-                 			        <option value="text">Creator</option>
-                 			        <option value="dropdown">Status</option>
+                 			        <option value="-" data-type="none" selected>-</option>
+                 			        <option value="column a" data-type="text">Column A</option>
+                 			        <option value="column b" data-type="text">Column B</option>
+                 			        <option value="column c" data-type="text">Column C</option>
+                 			        <option value="column d" data-type="dropdown">Column D</option>
+                 			        <!-- <option value="column e" data-type="text">Column E</option> -->
                  			        <!-- <option value="date">Date</option> -->
                  			        <!-- <option value="daterange">Date Range</option> -->
                  			      </select>
@@ -321,11 +333,9 @@
                  			      <label for="" class="yondu-filter__type text-right middle" data-filter-type="none">No filter applied</label>
                  			      <input type="text" class="form-control yondu-form yondu-form--min yondu-filter__type" data-filter-type="text" placeholder="Search here">
                  			      <select name="" id="" class="selectpicker yondu-form yondu-form--min form-control yondu-filter__type" data-filter-type="dropdown">
-                 			        <option value="">Option 1</option>
-                 			        <option value="">Option 2</option>
-                 			        <option value="">Option 3</option>
-                 			        <option value="">Option 4</option>
-                 			        <option value="">Option 5</option>
+                 			        <option value="Record 1 D">Record 1 D</option>
+                 			        <option value="Record 2 D">Record 2 D</option>
+                 			        <option value="Record 3 D">Record 3 D</option>
                  			      </select>
                  			
                  			      <div class="yondu-filter__type yondu-filter__type--date" data-filter-type="daterange">
@@ -390,14 +400,14 @@
                 		</div>
                 		<div class="table">
                   		<div class="yondu-container row">
-                  		  <table class="yondu-table">
+                  		  <table id="yondu-datatable-dashboard-admin-onModal" class="yondu-table">
                   		    <thead>
                   		      <tr>
-                  		        <th>Column A</th>
-                  		        <th>Column B</th>
-                  		        <th>Column C</th>
-                  		        <th>Column D</th>
-                  		        <th>Column E</th>
+                  		        <th data-fcol="column a">Column A</th>
+                  		        <th data-fcol="column b">Column B</th>
+                  		        <th data-fcol="column c">Column C</th>
+                  		        <th data-fcol="column d">Column D</th>
+                  		        <th data-fcol="column e">Column E</th>
                   		      </tr>
                   		    </thead>
                   		    <tbody>
@@ -422,13 +432,238 @@
                   		        <td title="Column C">Record 2 C</td>
                   		        <td title="Column D">Record 2 D</td>
                   		        <td title="Column E" class="yondu-table__action">
-                  							<span class="yondu-table__button" data-toggle="record2"><i class="fa fa-ellipsis-v"></i></span>
-                  							<ul id="record2" class="yondu-table__buttons" data-toggler=".expanded">
+                  		          <span class="yondu-table__button" data-toggle="record2"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record2" class="yondu-table__buttons" data-toggler=".expanded">
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete"><i class="fa fa-remove"></i></a></li>
-                  							</ul>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record3"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record3" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record4"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record4" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record5"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record5" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record6"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record6" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record7"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record7" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record8"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record8" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record9"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record9" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record10"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record10" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record11"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record11" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record12"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record12" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record13"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record13" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record14"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record14" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record15"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record15" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record16"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record16" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
+                  		        </td>
+                  		      </tr>
+                  		      <tr>
+                  		        <td title="Column A">Record 2 A</td>
+                  		        <td title="Column B">Record 2 B</td>
+                  		        <td title="Column C">Record 2 C</td>
+                  		        <td title="Column D">Record 2 D</td>
+                  		        <td title="Column E" class="yondu-table__action">
+                  		          <span class="yondu-table__button" data-toggle="record17"><i class="fa fa-ellipsis-v"></i></span>
+                  		          <ul id="record17" class="yondu-table__buttons" data-toggler=".expanded">
+                  		
+                  		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+                  		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		          </ul>
                   		        </td>
                   		      </tr>
                   		    </tbody>

@@ -1,4 +1,4 @@
-<div class="yondu yondu-filter row">
+<div class="yondu yondu-filter row" data-target="#yondu-datatable-{{page}}{{#if onModal}}-onModal{{/if}}">
   <div id="yondu-filter--reponsive" class="yondu-filter--left medium-9 small-12 columns">
     <div data-responsive-toggle="yondu-filter--reponsive">
       <button class="close-button yondu-filter__btn--hide" aria-label="Close menu" type="button" data-toggle>
@@ -11,9 +11,12 @@
     </div>
     <div class="medium-3 small-12 columns">
       <select name="" id="yondu-category" class="selectpicker yondu-form yondu-form--min form-control yondu-filter__category">
-        <option value="none" selected>-</option>
-        <option value="text">Creator</option>
-        <option value="dropdown">Status</option>
+        <option value="-" data-type="none" selected>-</option>
+        <option value="column a" data-type="text">Column A</option>
+        <option value="column b" data-type="text">Column B</option>
+        <option value="column c" data-type="text">Column C</option>
+        <option value="column d" data-type="dropdown">Column D</option>
+        <!-- <option value="column e" data-type="text">Column E</option> -->
         <!-- <option value="date">Date</option> -->
         <!-- <option value="daterange">Date Range</option> -->
       </select>
@@ -22,11 +25,9 @@
       <label for="" class="yondu-filter__type text-right middle" data-filter-type="none">No filter applied</label>
       <input type="text" class="form-control yondu-form yondu-form--min yondu-filter__type" data-filter-type="text" placeholder="Search here">
       <select name="" id="" class="selectpicker yondu-form yondu-form--min form-control yondu-filter__type" data-filter-type="dropdown">
-        <option value="">Option 1</option>
-        <option value="">Option 2</option>
-        <option value="">Option 3</option>
-        <option value="">Option 4</option>
-        <option value="">Option 5</option>
+        <option value="Record 1 D">Record 1 D</option>
+        <option value="Record 2 D">Record 2 D</option>
+        <option value="Record 3 D">Record 3 D</option>
       </select>
 
       <div class="yondu-filter__type yondu-filter__type--date" data-filter-type="daterange">

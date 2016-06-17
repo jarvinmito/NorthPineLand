@@ -1,6 +1,7 @@
 var nliApp = (function(){
 
 	var initDataTables = function(special){
+
 		var options = {
 			"oLanguage" : {
 				"oPaginate" : {
@@ -15,6 +16,7 @@ var nliApp = (function(){
 
 		if( !special ){
 			if( $('.yondu-table').length ){
+
 				$('.yondu-table').each(function(){
 					var curr = $(this);
 					
@@ -22,11 +24,16 @@ var nliApp = (function(){
 						options.scrollX = true;
 					}
 
-					$(this).dataTable(options);
+					if( curr.attr('id') ){
+						var uni = $('#'+curr.attr('id'));
+						uni.DataTable(options);
+					}else{
+						curr.DataTable(options);
+					}
 				});
 			}
 		}else{
-			$(special).dataTable(options);
+			$(special).DataTable(options);
 		}
 
 	};
@@ -52,8 +59,15 @@ var nliApp = (function(){
 					all.removeClass('has-error');
 				};
 
+				// cat.on('click', 'option', function(e){
+				// 	var selected = $(this).data('type');
+				// 	clearform();
+				// 	sfilter.find('.yondu-filter__type').not('.yondu-filter__type[data-filter-type="'+selected+'"]').hide();
+				// 	sfilter.find('.yondu-filter__type[data-filter-type="'+selected+'"]').show();
+				// });
+
 				cat.on('change', function(e){
-					var selected = $(this).val();
+					var selected = $(this).find('option:selected').data('type');
 					// Reset all values
 					clearform();
 					sfilter.find('.yondu-filter__type').not('.yondu-filter__type[data-filter-type="'+selected+'"]').hide();
@@ -63,17 +77,15 @@ var nliApp = (function(){
 
 				entries.on('change', function(e){
 					var selected = $(this).val();
+					var parentElem = $(this).closest('.yondu-filter');
 
-					if( $(this).data('target') ){
-						var target = $(this).data('target');
+					if( parentElem.data('target') ){
+						var target = parentElem.data('target');
 						var actual_target = $(target).parents('.dataTables_wrapper').find('.dataTables_length select');
 
 						actual_target.val(selected);
 						actual_target.trigger('change');
 					}
-
-
-
 				});
 
 				search.on('click', function(e){
@@ -96,7 +108,7 @@ var nliApp = (function(){
 						// currParent.find('select, input').not('.yondu-filter__category, .yondu-filter__entries')
 					}
 
-					total_checked = 0;
+					var total_checked = 0;
 					if( visible.length ){
 
 						visible.each(function(index){
@@ -109,16 +121,35 @@ var nliApp = (function(){
 						});
 					}
 
-					var currCallback = curr.data('callback');
-					if( currCallback ){
-						// convert string to function;
-						var callback = window[currCallback];
+					// var currCallback = curr.data('callback');
+					// if( currCallback ){
+					// 	// convert string to function;
+					// 	var callback = window[currCallback];
 
-						if( total_checked == visible.length && total_checked != 0 ){
-							if( typeof callback == 'function'){
-								callback();
-							}
-						}
+					// 	if( total_checked == visible.length && total_checked != 0 ){
+					// 		if( typeof callback == 'function'){
+					// 			callback();
+					// 		}
+					// 	}
+					// }
+
+
+					var parentElem = curr.closest('.yondu-filter');
+
+					if( parentElem.data('target') ){
+						var target = parentElem.data('target');
+						var oTable = $(target).DataTable();
+						var catSelVal = cat.find('option:selected').val();
+						var catSelType = cat.find('option:selected').data('type');
+						var oTableCol = $(target).find('th[data-fcol="'+catSelVal+'"]').index();
+						var search = parentElem.find('[data-filter-type="'+catSelType+'"]').val();
+
+						console.log(catSelVal, catSelType, oTableCol, search);
+
+						// reset search
+						oTable.search('').columns().search('').draw();
+						// apply search
+						oTable.column(oTableCol).search(search).draw();
 					}
 
 				});
@@ -195,6 +226,18 @@ var nliApp = (function(){
 
 	};
 
+
+	var customAlert = function(options){
+		var modal = $('#alertModal');
+		var title = modal.find('.lead');
+		var message = modal.find('p');
+
+		title.text(options.title);
+		message.text(options.message);
+
+		modal.foundation('open');
+
+	};
 
 	var initConfirm = function(){
 		var elements = $('[data-confirm]');
@@ -478,6 +521,7 @@ var nliApp = (function(){
 		
 	};
 
+
 	var initLoader = function(){
 		var loader = $('.yondu-loader');
 
@@ -505,7 +549,8 @@ var nliApp = (function(){
 		initMapModal : initMapModal,
 		initLoader : initLoader,
 		initCalculatorForm : initCalculatorForm,
-		initDatePicker : initDatePicker
+		initDatePicker : initDatePicker,
+		customAlert : customAlert
 	};
 
 }());

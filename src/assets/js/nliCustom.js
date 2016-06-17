@@ -30,8 +30,8 @@ $(document).ready(function(){
 	});
 
 	var initModule = function(){
-		nliApp.initFilter();
 		nliApp.initDataTables();
+		nliApp.initFilter();
 		nliApp.initConfirm();
 		nliApp.initLotModal();
 		nliApp.initMapModal();

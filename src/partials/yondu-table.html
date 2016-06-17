@@ -1,12 +1,12 @@
 <div class="yondu-container row">
-  <table class="yondu-table">
+  <table id="yondu-datatable-{{page}}{{#if onModal}}-onModal{{/if}}" class="yondu-table">
     <thead>
       <tr>
-        <th>Column A</th>
-        <th>Column B</th>
-        <th>Column C</th>
-        <th>Column D</th>
-        <th>Column E</th>
+        <th data-fcol="column a">Column A</th>
+        <th data-fcol="column b">Column B</th>
+        <th data-fcol="column c">Column C</th>
+        <th data-fcol="column d">Column D</th>
+        <th data-fcol="column e">Column E</th>
       </tr>
     </thead>
     <tbody>
@@ -39,21 +39,366 @@
         <td title="Column C">Record 2 C</td>
         <td title="Column D">Record 2 D</td>
         <td title="Column E" class="yondu-table__action">
-					<span class="yondu-table__button" data-toggle="record2"><i class="fa fa-ellipsis-v"></i></span>
-					<ul id="record2" class="yondu-table__buttons" data-toggler=".expanded">
+          <span class="yondu-table__button" data-toggle="record2"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record2" class="yondu-table__buttons" data-toggler=".expanded">
             {{#ifpage 's-project'}}
-  						<li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
-  						<li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
               <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
-  						<li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
             {{/ifpage}}
 
             {{#unlesspage 's-project'}}
               <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
               <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-              <li><a href="#" title="delete"><i class="fa fa-remove"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
             {{/unlesspage}}
-					</ul>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record3"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record3" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record4"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record4" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record5"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record5" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record6"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record6" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record7"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record7" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record8"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record8" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record9"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record9" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record10"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record10" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record11"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record11" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record12"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record12" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record13"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record13" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record14"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record14" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record15"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record15" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record16"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record16" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td title="Column A">Record 2 A</td>
+        <td title="Column B">Record 2 B</td>
+        <td title="Column C">Record 2 C</td>
+        <td title="Column D">Record 2 D</td>
+        <td title="Column E" class="yondu-table__action">
+          <span class="yondu-table__button" data-toggle="record17"><i class="fa fa-ellipsis-v"></i></span>
+          <ul id="record17" class="yondu-table__buttons" data-toggler=".expanded">
+            {{#ifpage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="vicinity map" data-is-map data-url="/assets/img/dashboard.jpg"><i class="fa fa-map-marker"></i></a></li>
+              <li><a href="#" title="available lots" data-is-lot><i class="fa fa-map"></i></a></li>
+              <li><a href="#" title="calculator"><i class="fa fa-calculator"></i></a></li>
+            {{/ifpage}}
+
+            {{#unlesspage 's-project'}}
+              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
+              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
+              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+            {{/unlesspage}}
+          </ul>
         </td>
       </tr>
     </tbody>
