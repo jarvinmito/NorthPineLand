@@ -133,7 +133,6 @@ var nliApp = (function(){
 					// 	}
 					// }
 
-
 					var parentElem = curr.closest('.yondu-filter');
 
 					if( parentElem.data('target') ){
@@ -245,6 +244,19 @@ var nliApp = (function(){
 
 		$(document).on('click', '[data-confirm]', function(e){
 			e.preventDefault();
+			var that = $(this);
+
+			$('#confirmYes').unbind('click');
+			$('#confirmYes').on('click', function(){
+				var callback = that.data('callback');
+				var x = eval(callback);
+				if( typeof x == 'function'){
+					x();
+				}
+
+				console.log(x);
+			});
+
 			modal.foundation('open');
 		});
 
@@ -540,6 +552,25 @@ var nliApp = (function(){
 	};
 
 
+	// ajax function global as long as there is a url
+	var ajxCall = function(url){
+		if( url ){
+			$.ajax({
+				url : url,
+				method : 'get',
+				beforeSend : function(xhr){
+					initLoader().show();
+				},
+				success : function(res){
+					// refresh or redirect
+					initLoader().hide();
+					window.location = res;
+				}
+			});
+		}
+	};
+
+
 	return {
 		offCanvasTransform : offCanvasTransform,
 		initFilter : initFilter,
@@ -550,7 +581,8 @@ var nliApp = (function(){
 		initLoader : initLoader,
 		initCalculatorForm : initCalculatorForm,
 		initDatePicker : initDatePicker,
-		customAlert : customAlert
+		customAlert : customAlert,
+		ajxCall : ajxCall
 	};
 
 }());

@@ -64,7 +64,7 @@
                               <ul class="menu">
                                 <li><a href="#">My Profile</a></li>
                                 <li><a href="#">Change Password</a></li>
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="#" data-confirm data-callback="logout(3)">Logout</a></li>
                               </ul>
                             </li>
                           </ul>
@@ -282,12 +282,12 @@
                 
                 <!-- confirmation modal -->
                 <div class="reveal tiny yondu-modal" id="confirmModal" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out">
-                  <p class="lead">Are you sure you want to delete?</p>
+                  <p class="lead">Are you sure?</p>
                   <!-- <button class="close-button" data-close aria-label="Close reveal" type="button">
                     <span aria-hidden="true">&times;</span>
                   </button> -->
-                  <a class="button yondu-btn yondu-btn--secondary nomargin" data-open="exampleModal3">Yes</a>
-                  <a class="button yondu-btn yondu-btn--secondary nomargin" data-close>No</a>
+                  <a class="button yondu-btn yondu-btn--secondary nomargin" href="javascript:;" id="confirmYes">Yes</a>
+                  <a class="button yondu-btn yondu-btn--secondary nomargin" href="javascript:;" data-close>No</a>
                 </div>
                 
                 <!-- vicinity map modal -->
@@ -423,7 +423,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete"><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(22)"><i class="fa fa-remove"></i></a></li>
                   							</ul>
                   		        </td>
                   		      </tr>
@@ -438,7 +438,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(0)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -453,7 +453,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(1)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -468,7 +468,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(2)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -483,7 +483,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(3)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -498,7 +498,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(4)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -513,7 +513,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(5)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -528,7 +528,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(6)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -543,7 +543,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(7)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -558,7 +558,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(8)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -573,7 +573,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(9)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -588,7 +588,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(10)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -603,7 +603,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(11)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -618,7 +618,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(12)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -633,7 +633,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(13)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -648,7 +648,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(14)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
@@ -663,7 +663,7 @@
                   		
                   		              <li><a href="#" title="view"><i class="fa fa-search"></i></a></li>
                   		              <li><a href="#" title="edit"><i class="fa fa-pencil"></i></a></li>
-                  		              <li><a href="#" title="delete" data-confirm><i class="fa fa-remove"></i></a></li>
+                  		              <li><a href="#" title="delete" data-confirm data-callback="delete(15)"><i class="fa fa-remove"></i></a></li>
                   		          </ul>
                   		        </td>
                   		      </tr>
