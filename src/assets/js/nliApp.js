@@ -459,35 +459,23 @@ var nliApp = (function(){
 					console.log(types, currBtn, currBtn.data('button-type'));
 
 					types[currBtn.data('button-type')]();
-				})
-
-				// downpayment.on('keyup', function(e){
-				// 	calcBalance();
-				// 	calcBalance();
-				// });
-
-				// totalprice.on('keyup', function(e){
-				// 	console.log('minasdf!');
-				// });
-
-				// promodiscount.on('keyup', function(e){
-				// 	console.log('fudge!!');
-				// });
-
-				// paytermpromo.on('keyup', function(e){
-				// 	console.log('minasdf!');
-				// });
-
-				// prefferedterm.on('keyup', function(e){
-				// 	console.log('fudge!!');
-				// });
-
-				// bankrate.on('keyup', function(e){
-				// 	console.log('minasdf!');
-				// });
+				});
 
 			});
 		}
+	};
+
+	var initDatePicker = function(){
+		var dates = $('[pattern="datetime"], [pattern="date"], .yondu-forms__input.date');
+
+		if( dates.length ){
+			dates.fdatepicker({
+				format: 'mm-dd-yyyy hh:ii',
+				disableDblClickSelection: true,
+				pickTime: true
+			});
+		}
+		
 	};
 
 	var initLoader = function(){
@@ -516,7 +504,8 @@ var nliApp = (function(){
 		initLotModal : initLotModal,
 		initMapModal : initMapModal,
 		initLoader : initLoader,
-		initCalculatorForm : initCalculatorForm
+		initCalculatorForm : initCalculatorForm,
+		initDatePicker : initDatePicker
 	};
 
 }());

@@ -37,6 +37,7 @@ $(document).ready(function(){
 		nliApp.initMapModal();
 		nliApp.initLoader();
 		nliApp.initCalculatorForm();
+		nliApp.initDatePicker();
 	};
 
 	initModule();

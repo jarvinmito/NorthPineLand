@@ -123,26 +123,32 @@
                       <!-- CALCULATOR -->
                       <div class="small-6 medium-6 large-3 columns text-left yondu-dashboard__computation">
                   			<div class="yondu-widget yondu-calculator">
-                  				<form class="yondu-calculator__form" action="">
+                  				<form class="yondu-calculator__form" action="" data-abide novalidate>
                   					<div class="yondu-widget__title">Sample Computation</div>
                   					<div class="yondu-widget__content row">
                   						<div class="columns medium-6 large-12">
-                  							<input type="text" id="nli-downpayment" placeholder="Downpayment (in %)" class="yondu-forms__input">
+                  							<input type="text" id="nli-downpayment" placeholder="Downpayment (in %)" class="yondu-forms__input" required pattern="number">
+                  							<div class="yondu-validation"><span class="form-error">This is required</span></div>
                   						</div>
                   						<div class="columns medium-6 large-12">
-                  							<input type="text" id="nli-total-contract-price" placeholder="Gross Total Contract Price" class="yondu-forms__input">
+                  							<input type="text" id="nli-total-contract-price" placeholder="Gross Total Contract Price" class="yondu-forms__input" required pattern="number">
+                  							<div class="yondu-validation"><span class="form-error">This is required</span></div>
                   						</div>
                   						<div class="columns medium-6">
                   							<input type="text" id="nli-promo-discount" placeholder="Promo Discount" class="yondu-forms__input">
+                  							<div class="yondu-validation"><span class="form-error">This is required</span></div>
                   						</div>
                   						<div class="columns medium-6">
                   							<input type="text" id="nli-payterm-promo" placeholder="Payterm Promo" class="yondu-forms__input">
+                  							<div class="yondu-validation"><span class="form-error">This is required</span></div>
                   						</div>
                   						<div class="columns medium-6">
-                  							<input type="text" id="nli-preffered-term" placeholder="Preferred Term" class="yondu-forms__input">
+                  							<input type="text" id="nli-preffered-term" placeholder="Preferred Term" class="yondu-forms__input" required pattern="number">
+                  							<div class="yondu-validation"><span class="form-error">This is required</span></div>
                   						</div>
                   						<div class="columns medium-6">
-                  							<input type="text" id="nli-bank-rate" placeholder="Bank Rate (in %)" class="yondu-forms__input">
+                  							<input type="text" id="nli-bank-rate" placeholder="Bank Rate (in %)" class="yondu-forms__input" required pattern="number">
+                  							<div class="yondu-validation"><span class="form-error">This is required</span></div>
                   						</div>
                   					</div>
                   					<hr>
